@@ -7,7 +7,83 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        /* ... */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .cabecalho {
+            display: block;
+            position: relative;
+            background-color: rgb(73, 73, 73);
+            height: 40px;
+        }
+
+        .logo {
+            position: relative;
+            float: left;
+            height: 100%;
+            width: 166px;
+        }
+
+        img{
+            /* 529x100 */
+            position: absolute;
+            box-sizing: border-box;
+            height: 100%;
+            width: 100%;
+            padding: 5px;
+        }
+
+        .menu-toggle {
+            display: inline-block;
+        }
+
+        .menu {
+            position: relative;
+            float: left;
+            background-color: brown;
+            height: 100%;
+            width: 380px;
+            
+        }
+
+        .menu li {
+            display: inline-block;
+            background-color: cyan;
+            width: 60px;
+            margin-top: 7px;
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+            
+        }
+
+        .menu li > a {
+            text-decoration: none;
+            
+        }
+
+        .autenticacao {
+            float: right;
+            height: 100%;
+            width: 150px;
+            background-color: coral;
+        }
+
+        .autenticacao > a {
+            background-color: cyan;
+            display: inline-block;
+            width: 73px;
+            margin-top: 10px;
+        }
+
+        #login {
+            float: left;
+        }
+
+        #registrar {
+            float: right;
+        }
     </style>
 </head>
 
@@ -39,7 +115,7 @@
         </nav>
         <aside class="autenticacao">
             <a href="#login">Login</a>
-            <a href="#registar" class="botao destaque">Registrar</a>
+            <a href="#registrar" class="botao destaque">Registrar</a>
         </aside>
     </header>
 
