@@ -15,7 +15,7 @@
         .cabecalho {
             display: block;
             position: relative;
-            background-color: rgb(73, 73, 73);
+            background-color: #494949;
             height: 50px;
         }
 
@@ -37,8 +37,19 @@
         }
 
         .menu-toggle {
-            display: block;
+            display: none;
             float: right;
+            height: 40px;
+            width: 40px;
+            background-color: rgb(104, 104, 104);
+            border: solid 1px rgba(245, 245, 245, 0.568);
+            border-radius: 10px;
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+
+        .menu-toggle > i {
+            color: white;
         }
 
         .menu {
@@ -59,6 +70,10 @@
             box-sizing: border-box;
         }
 
+        .menu li:hover {
+            background-color: #86cffc;
+        }
+
         .menu li > a {
             text-decoration: none;
             color: white;
@@ -76,7 +91,7 @@
             float: left;
             width: 50%;
             height: 40px;
-            margin-top: 4px;
+            margin-top: 5px;
             padding: 7px;
             font-family: 'Oswald', sans-serif;
             box-sizing: border-box;
@@ -90,7 +105,24 @@
             border-radius: 25px;
         }
 
-        @media()
+        @media(max-width: 710px) {
+            .autenticacao {
+                display: none;
+            }
+
+            .menu {
+                float: right;
+            }
+        }
+        @media(max-width: 600px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .menu {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -106,16 +138,16 @@
         </button>
         <nav class="menu">
             <ul>
-                <li>
+                <li id="inicio">
                     <a href="#inicio">Início</a>
                 </li>
-                <li>
+                <li id="cursos">
                     <a href="#cursos">Cursos</a>
                 </li>
-                <li>
+                <li id="sobre">
                     <a href="#sobre">Sobre</a>
                 </li>
-                <li>
+                <li id="contato">
                     <a href="#contato">Contato</a>
                 </li>
             </ul>
@@ -127,7 +159,20 @@
     </header>
 
     <script>
-        // ...
+        window.addEventListener('hashchange', (i) => {
+            const hash = i.newURL
+            const id = hash.substring(hash.indexOf('#') + 1)
+            const elemento = document.getElementById(id)
+            elemento.style.backgroundColor = '#86cffc'
+
+            if(!(i.oldURL === i.newURL)){
+                const idOld = (i.oldURL).substring((i.oldURL).indexOf('#') + 1)
+                const elementoOld = document.getElementById(idOld)
+                elementoOld.style.backgroundColor = '#494949'
+            }
+            console.log('location changed')
+        })
+
     </script>
 </body>
 
