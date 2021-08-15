@@ -31,7 +31,20 @@
         .flex-container div {
             width: 100px;
             flex-grow: 0;
-            flex-grow: ;
+            flex-grow: 1;
+        }
+
+        .flex-container div:nth-child(1){
+            flex-grow: 2;
+        }
+
+        .flex-container {
+            width: 300px;
+            flex-shrink: 1;
+        }
+
+        .flex-container div:nth-child(1) {
+            flex-shrink: 5;
         }
     </style>
 </head>
